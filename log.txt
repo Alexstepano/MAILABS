@@ -1,0 +1,221 @@
+alex12@alex12-VirtualBox:~$ pwd
+/home/alex12
+alex12@alex12-VirtualBox:~$ ls -l
+total 76
+-rw-rw-r-- 1 alex12 alex12     0 окт 16 21:50 10remix.mp4
+-rw-rw-r-- 1 alex12 alex12   371 окт 31 12:38 8task.c
+-rw-rw-r-- 1 alex12 alex12     0 окт  2 20:50 alg.tu
+-rw-rw-r-- 1 alex12 alex12  2740 окт  2 20:51 alor.tu
+-rwxrwxr-x 1 alex12 alex12 16064 окт 31 12:38 a.out
+drwxr-xr-x 2 alex12 alex12  4096 сен  5 15:17 Desktop
+drwxr-xr-x 2 alex12 alex12  4096 сен  5 15:17 Documents
+drwxr-xr-x 2 alex12 alex12  4096 окт  2 20:46 Downloads
+drwxrwxr-x 2 alex12 alex12  4096 окт 31 09:59 MAI
+drwxr-xr-x 2 alex12 alex12  4096 сен  5 15:17 Music
+drwxr-xr-x 2 alex12 alex12  4096 сен  5 15:17 Pictures
+drwxr-xr-x 2 alex12 alex12  4096 сен  5 15:17 Public
+-rw-rw-r-- 1 alex12 alex12    18 окт 16 22:06 r.txt
+drwx------ 4 alex12 alex12  4096 сен  5 15:17 snap
+drwxr-xr-x 2 alex12 alex12  4096 сен  5 15:17 Templates
+-rw-rw-r-- 1 alex12 alex12   138 окт 31 10:42 test1.c
+-rw-rw-r-- 1 alex12 alex12    66 окт 31 10:51 test1.c.save
+drwxr-xr-x 2 alex12 alex12  4096 сен  5 15:17 Videos
+alex12@alex12-VirtualBox:~$ rm a.out
+alex12@alex12-VirtualBox:~$ ls -l
+total 60
+-rw-rw-r-- 1 alex12 alex12    0 окт 16 21:50 10remix.mp4
+-rw-rw-r-- 1 alex12 alex12  371 окт 31 12:38 8task.c
+-rw-rw-r-- 1 alex12 alex12    0 окт  2 20:50 alg.tu
+-rw-rw-r-- 1 alex12 alex12 2740 окт  2 20:51 alor.tu
+drwxr-xr-x 2 alex12 alex12 4096 сен  5 15:17 Desktop
+drwxr-xr-x 2 alex12 alex12 4096 сен  5 15:17 Documents
+drwxr-xr-x 2 alex12 alex12 4096 окт  2 20:46 Downloads
+drwxrwxr-x 2 alex12 alex12 4096 окт 31 09:59 MAI
+drwxr-xr-x 2 alex12 alex12 4096 сен  5 15:17 Music
+drwxr-xr-x 2 alex12 alex12 4096 сен  5 15:17 Pictures
+drwxr-xr-x 2 alex12 alex12 4096 сен  5 15:17 Public
+-rw-rw-r-- 1 alex12 alex12   18 окт 16 22:06 r.txt
+drwx------ 4 alex12 alex12 4096 сен  5 15:17 snap
+drwxr-xr-x 2 alex12 alex12 4096 сен  5 15:17 Templates
+-rw-rw-r-- 1 alex12 alex12  138 окт 31 10:42 test1.c
+-rw-rw-r-- 1 alex12 alex12   66 окт 31 10:51 test1.c.save
+drwxr-xr-x 2 alex12 alex12 4096 сен  5 15:17 Videos
+alex12@alex12-VirtualBox:~$ nano 8task.c 
+alex12@alex12-VirtualBox:~$ cat 8task.c 
+#include <stdio.h>
+
+int main(){
+long long a=1,g=1,k=1,r=0,s26=0,s13=0,s2=0,s0=0;
+scanf("%lld",&a);
+for(long long y=0;y<a;y++){
+scanf("%lld",&g);
+if(g%26==0){s26++;}//number of  chislo %26
+else if(g%13==0){s13++;}//%13
+else if(g%2==0){s2++;}//%2
+else s0++;}//ne dekitsa na netriv deliteli
+// magic formul= s26*(s2+s13+so)+s13*s2;
+long long magic_formul= s26*(s2+s13+s0+(s26-1))+s13*s2;//dana IIsusom
+printf("%lld\n",magic_formul);
+k=k/0;//mistake;
+
+return 0;
+
+
+
+}
+
+alex12@alex12-VirtualBox:~$ gcc -v 8task.c 
+Using built-in specs.
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.3.0-1ubuntu1~22.04' --with-bugurl=file:///usr/share/doc/gcc-11/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-11 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-11-xKiWfi/gcc-11-11.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-11-xKiWfi/gcc-11-11.3.0/debian/tmp-gcn/usr --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 11.3.0 (Ubuntu 11.3.0-1ubuntu1~22.04) 
+COLLECT_GCC_OPTIONS='-v' '-mtune=generic' '-march=x86-64' '-dumpdir' 'a-'
+ /usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -v -imultiarch x86_64-linux-gnu 8task.c -quiet -dumpdir a- -dumpbase 8task.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccmPAnFY.s
+GNU C17 (Ubuntu 11.3.0-1ubuntu1~22.04) version 11.3.0 (x86_64-linux-gnu)
+	compiled by GNU C version 11.3.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/include-fixed"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-linux-gnu/11/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+GNU C17 (Ubuntu 11.3.0-1ubuntu1~22.04) version 11.3.0 (x86_64-linux-gnu)
+	compiled by GNU C version 11.3.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 3f6cb05d963ad324b8f9442822c95179
+8task.c: In function ‘main’:
+8task.c:15:4: warning: division by zero [-Wdiv-by-zero]
+   15 | k=k/0;//mistake;
+      |    ^
+COLLECT_GCC_OPTIONS='-v' '-mtune=generic' '-march=x86-64' '-dumpdir' 'a-'
+ as -v --64 -o /tmp/ccfJy06V.o /tmp/ccmPAnFY.s
+GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-mtune=generic' '-march=x86-64' '-dumpdir' 'a.'
+ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccvACRhE.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. /tmp/ccfJy06V.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-mtune=generic' '-march=x86-64' '-dumpdir' 'a.'
+alex12@alex12-VirtualBox:~$ ls -l
+total 76
+-rw-rw-r-- 1 alex12 alex12     0 окт 16 21:50 10remix.mp4
+-rw-rw-r-- 1 alex12 alex12   464 окт 31 13:07 8task.c
+-rw-rw-r-- 1 alex12 alex12     0 окт  2 20:50 alg.tu
+-rw-rw-r-- 1 alex12 alex12  2740 окт  2 20:51 alor.tu
+-rwxrwxr-x 1 alex12 alex12 16064 окт 31 13:08 a.out
+drwxr-xr-x 2 alex12 alex12  4096 сен  5 15:17 Desktop
+drwxr-xr-x 2 alex12 alex12  4096 сен  5 15:17 Documents
+drwxr-xr-x 2 alex12 alex12  4096 окт  2 20:46 Downloads
+drwxrwxr-x 2 alex12 alex12  4096 окт 31 09:59 MAI
+drwxr-xr-x 2 alex12 alex12  4096 сен  5 15:17 Music
+drwxr-xr-x 2 alex12 alex12  4096 сен  5 15:17 Pictures
+drwxr-xr-x 2 alex12 alex12  4096 сен  5 15:17 Public
+-rw-rw-r-- 1 alex12 alex12    18 окт 16 22:06 r.txt
+drwx------ 4 alex12 alex12  4096 сен  5 15:17 snap
+drwxr-xr-x 2 alex12 alex12  4096 сен  5 15:17 Templates
+-rw-rw-r-- 1 alex12 alex12   138 окт 31 10:42 test1.c
+-rw-rw-r-- 1 alex12 alex12    66 окт 31 10:51 test1.c.save
+drwxr-xr-x 2 alex12 alex12  4096 сен  5 15:17 Videos
+alex12@alex12-VirtualBox:~$ ./a.out
+1
+2
+0
+Floating point exception (core dumped)
+alex12@alex12-VirtualBox:~$ nano 8task.c 
+alex12@alex12-VirtualBox:~$ gcc -v 8task.c 
+Using built-in specs.
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.3.0-1ubuntu1~22.04' --with-bugurl=file:///usr/share/doc/gcc-11/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-11 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-11-xKiWfi/gcc-11-11.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-11-xKiWfi/gcc-11-11.3.0/debian/tmp-gcn/usr --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 11.3.0 (Ubuntu 11.3.0-1ubuntu1~22.04) 
+COLLECT_GCC_OPTIONS='-v' '-mtune=generic' '-march=x86-64' '-dumpdir' 'a-'
+ /usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -v -imultiarch x86_64-linux-gnu 8task.c -quiet -dumpdir a- -dumpbase 8task.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccWQnBiz.s
+GNU C17 (Ubuntu 11.3.0-1ubuntu1~22.04) version 11.3.0 (x86_64-linux-gnu)
+	compiled by GNU C version 11.3.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/include-fixed"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-linux-gnu/11/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+GNU C17 (Ubuntu 11.3.0-1ubuntu1~22.04) version 11.3.0 (x86_64-linux-gnu)
+	compiled by GNU C version 11.3.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 3f6cb05d963ad324b8f9442822c95179
+COLLECT_GCC_OPTIONS='-v' '-mtune=generic' '-march=x86-64' '-dumpdir' 'a-'
+ as -v --64 -o /tmp/cc1kPaFR.o /tmp/ccWQnBiz.s
+GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-mtune=generic' '-march=x86-64' '-dumpdir' 'a.'
+ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAZj9UO.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. /tmp/cc1kPaFR.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-mtune=generic' '-march=x86-64' '-dumpdir' 'a.'
+alex12@alex12-VirtualBox:~$ ./a.out
+1
+2
+0
+alex12@alex12-VirtualBox:~$ ./a.out
+0
+0
+alex12@alex12-VirtualBox:~$ ./a.out
+2
+26
+26
+2
+alex12@alex12-VirtualBox:~$ ./a.out
+3
+26
+52
+78
+6
+alex12@alex12-VirtualBox:~$ 4
+4: command not found
+alex12@alex12-VirtualBox:~$ ./a.out
+2
+4
+13
+1
+alex12@alex12-VirtualBox:~$ ./a.out
+2
+5
+8
+0
+alex12@alex12-VirtualBox:~$ ./a.out
+4
+2
+6
+13
+39 
+4
+alex12@alex12-VirtualBox:~$ ./a.out
+5
+2
+6
+13
+39
+26
+8
