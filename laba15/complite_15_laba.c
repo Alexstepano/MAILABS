@@ -103,7 +103,7 @@ int main()
 
 
      int64_t n=0;
-     int64_t maxelemet=0;
+     int64_t maxelemet=LLONG_MIN;
      printf("Enter the dimension of the matrix\n");
      scanf("%lld",&n);
      if(n==0){
